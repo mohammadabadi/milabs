@@ -1,0 +1,27 @@
+{
+  "name": "milabs-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "check:locales": "node scripts/check-locales.mjs",
+    "assets:brand": "node scripts/generate-brand-assets.mjs",
+    "qa": "node scripts/qa.mjs",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "^10.6.0",
+    "gsap": "^3.15.0",
+    "nuxt": "^4.6.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.0",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.13"
+  }
+}

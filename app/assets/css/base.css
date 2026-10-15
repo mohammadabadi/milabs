@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Base layer: reset, typography defaults, layout primitives, utilities.
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+  background: var(--bg);
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+
+h1, h2, h3, h4, p, ul, ol, figure, blockquote, dl, dd { margin: 0; }
+ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
+img, svg, video { display: block; max-width: 100%; }
+img { height: auto; }
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+
+h1, h2, h3 {
+  font-weight: 500;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-heading);
+  text-wrap: balance;
+}
+p { text-wrap: pretty; }
+
+::selection { background: var(--selection); }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.on-dark :focus-visible { outline-color: #8fb0ff; }
+
+/* ---- Layout primitives ------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.section { padding-block: var(--section-pad); position: relative; }
+
+.on-dark {
+  --bg: var(--c-night);
+  --bg-raised: var(--c-night-2);
+  --fg: #f1efe9;
+  --fg-soft: #d9d7d0;
+  --fg-muted: var(--c-night-muted);
+  --line: rgb(241 239 233 / 0.14);
+  --line-strong: rgb(241 239 233 / 0.3);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* ---- Type utilities --------------------------------------------------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  line-height: 1.4;
+}
+:lang(fa) .eyebrow { font-weight: 600; text-transform: none; }
+
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+/* Persian has no italic tradition: the accent becomes a weight + color shift */
+:lang(fa) .serif-accent { font-style: normal; font-weight: 300; letter-spacing: 0; }
+
+.lead { font-size: var(--fs-lead); line-height: var(--lh-lead); color: var(--fg-soft); max-width: var(--measure); }
+
+.latin { font-family: 'Instrument Sans Variable', var(--font-sans); unicode-bidi: isolate; }
+
+/* ---- Accessibility utilities ------------------------------------------ */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  z-index: 100;
+  padding: 0.7rem 1rem;
+  background: var(--c-ink);
+  color: #fff;
+  border-radius: var(--radius-s);
+  transform: translateY(-150%);
+  transition: transform var(--dur-2) var(--ease-out);
+}
+.skip-link:focus-visible { transform: none; }
+
+/* Hide decorative elements from forced-colors themes' clutter */
+@media (forced-colors: active) {
+  .decor { display: none; }
+}
+
+/* ---- Motion guard ------------------------------------------------------
+   `html.motion` is set by an inline head script only when the visitor
+   allows motion. Scroll-reveal targets are pre-hidden by GSAP itself, never
+   by CSS, so content is always visible without JavaScript.            */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

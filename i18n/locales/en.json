@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "title": "MiLabs: focused software for work and money",
+    "description": "MiLabs makes the Mi family of products: MiDesk for running the operations of a business, and MiFin for personal and shared finances. Each one is built around a single job.",
+    "ogAlt": "MiLabs: software that brings order to work and money."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "home": "MiLabs home",
+    "mainNav": "Main",
+    "footerNav": "Footer",
+    "newTab": "opens in a new tab",
+    "menu": "Menu",
+    "closeMenu": "Close menu"
+  },
+  "nav": {
+    "products": "Products",
+    "approach": "Approach",
+    "contact": "Contact",
+    "cta": "See the products"
+  },
+  "lang": {
+    "label": "Language",
+    "current": "English",
+    "en": "English",
+    "fa": "Persian",
+    "switchTo": "Read this page in {language}"
+  },
+  "hero": {
+    "eyebrow": "The Mi family of products",
+    "title": "Software that brings order to *work* and *money*.",
+    "lead": "MiLabs makes the Mi products, each built around one job. MiDesk runs the day-to-day operations of a business. MiFin keeps personal and shared expenses clear.",
+    "primary": "Explore the products",
+    "secondary": "How we build",
+    "machineLabel": "The Mi product family",
+    "pause": "Pause rotation",
+    "play": "Resume rotation",
+    "readMore": "Read about {name}"
+  },
+  "products": {
+    "eyebrow": "Products",
+    "title": "Two products. Each with *one job*.",
+    "intro": "Every Mi product has its own website, where you will find the details. Here is what each one is for.",
+    "forWhom": "Who it is for",
+    "whatItDoes": "What it does",
+    "visit": "Visit {host}",
+    "visitLabel": "Visit the {name} website",
+    "status": {
+      "live": "Website live",
+      "launching": "Website launching soon"
+    },
+    "provisional": "Illustrative interface, not a product screenshot",
+    "indexLabel": "Product {n} of {total}"
+  },
+  "ecosystem": {
+    "eyebrow": "The Mi family",
+    "title": "One prefix. Separate products. *A shared standard.*",
+    "p1": "MiDesk and MiFin are independent products, each with its own website. You can use one without the other.",
+    "p2": "What they share is the way they are made: a narrow focus, screens that explain themselves, and the habit of improving after launch. The Mi in each name stands for that standard."
+  },
+  "approach": {
+    "eyebrow": "Approach",
+    "title": "How we decide *what to build*.",
+    "items": {
+      "focus": {
+        "title": "One job, done properly.",
+        "text": "Every Mi product starts from a specific problem, and its name says what it is for. If a feature does not serve that job, it waits."
+      },
+      "clarity": {
+        "title": "Clarity before cleverness.",
+        "text": "Screens should explain themselves. We would rather remove a step than add a tooltip to explain it."
+      },
+      "time": {
+        "title": "Respect for your time.",
+        "text": "Fewer screens, fewer surprises. Software should take minutes out of your week, not hours."
+      },
+      "improve": {
+        "title": "Shipped, then improved.",
+        "text": "A product is not finished at launch. We keep refining it based on how people actually use it."
+      }
+    }
+  },
+  "closing": {
+    "eyebrow": "Start here",
+    "title": "Start with the one you *need today*.",
+    "note": "Product websites open in a new tab."
+  },
+  "footer": {
+    "tagline": "Focused software for work and money.",
+    "products": "Products",
+    "company": "MiLabs",
+    "language": "Language",
+    "rights": "© {year} MiLabs. All rights reserved.",
+    "backToTop": "Back to top"
+  },
+  "error": {
+    "title": "This page does not exist.",
+    "text": "The link may be old, or the address may have a typo.",
+    "home": "Go to the MiLabs homepage"
+  },
+  "mock": {
+    "midesk": {
+      "workspace": "Workspace",
+      "projects": "Projects",
+      "tasks": "Tasks",
+      "finance": "Finance",
+      "people": "People",
+      "board": "Website relaunch",
+      "todo": "To do",
+      "doing": "In progress",
+      "done": "Done",
+      "t1": "Draft Q4 budget",
+      "t2": "Onboard two new hires",
+      "t3": "Supplier invoices",
+      "t4": "Review service contracts",
+      "t5": "Weekly operations check-in",
+      "financeTitle": "This month",
+      "incoming": "In",
+      "outgoing": "Out",
+      "teamTitle": "Team",
+      "p1": "Lena K.",
+      "p2": "Omid R.",
+      "p3": "Sara M.",
+      "r1": "Design",
+      "r2": "Operations",
+      "r3": "Finance"
+    },
+    "mifin": {
+      "month": "October",
+      "income": "Income",
+      "expenses": "Expenses",
+      "home": "Home",
+      "food": "Food",
+      "transport": "Transport",
+      "groupTitle": "Weekend trip",
+      "members": "4 people",
+      "owesYou": "{name} owes you",
+      "youOwe": "You owe {name}",
+      "n1": "Sara",
+      "n2": "Ali",
+      "settle": "Settle up",
+      "suggestionTitle": "Suggestion",
+      "suggestion": "Food spending is up on last month. Set a monthly limit?",
+      "recent": "Recent",
+      "tx1": "Salary",
+      "tx2": "Groceries",
+      "tx3": "Taxi"
+    }
+  },
+  "demo": {
+    "open": "Try the live demo",
+    "openLabel": "Open the live {name} demo",
+    "title": "{name} live demo",
+    "close": "Close demo",
+    "loading": "Loading the demo…",
+    "slow": "This is taking longer than usual.",
+    "failed": "The demo could not be loaded here.",
+    "openNew": "Open in a new tab",
+    "note": "Sample data only. Nothing you do here is saved.",
+    "desktop": "Desktop view",
+    "mobile": "Mobile view",
+    "reload": "Reload demo"
+  },
+  "loader": {
+    "label": "Loading MiLabs"
+  }
+}

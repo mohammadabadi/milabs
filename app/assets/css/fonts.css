@@ -1,0 +1,109 @@
+/*
+ * Self-hosted fonts (no third-party requests). Files live in /public/fonts
+ * with stable names so each page can preload its critical faces
+ * (see app/composables/useSiteSeo.ts). Each face declares a unicode-range,
+ * so browsers download only the subsets a page uses.
+ *
+ *  - Instrument Sans (variable): Latin interface and body text
+ *  - Instrument Serif Italic: Latin editorial accents
+ *  - Yekan Bakh FaNum (static, 300–800): Persian text, Persian digits.
+ *    Commercial font (fontiran.com): the web license must cover milabs.ir.
+ *  - Geist Mono (variable): small technical labels
+ *
+ * Sources: Instrument Sans, Instrument Serif and Geist Mono (SIL OFL 1.1, via
+ * Fontsource); Yekan Bakh by Reza Bakhtiarifard (fontiran.com, commercial).
+ * `size-adjust` fallbacks keep line boxes stable while the web fonts load (CLS).
+ */
+@font-face {
+  font-family: 'Instrument Sans Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url('/fonts/instrument-sans-latin-wght.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Instrument Sans Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url('/fonts/instrument-sans-latin-ext-wght.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/instrument-serif-latin-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122;
+}
+@font-face {
+  font-family: 'Yekan Bakh';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url('/fonts/yekan-bakh-fanum-300.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Yekan Bakh';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/yekan-bakh-fanum-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Yekan Bakh';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/fonts/yekan-bakh-fanum-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Yekan Bakh';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('/fonts/yekan-bakh-fanum-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Yekan Bakh';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('/fonts/yekan-bakh-fanum-800.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Geist Mono Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/geist-mono-latin-wght.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122;
+}
+
+/* Metric-matched local fallbacks, used until the web fonts arrive */
+@font-face {
+  font-family: 'Instrument Sans Fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+  size-adjust: 96%;
+  ascent-override: 98%;
+  descent-override: 25%;
+}
+@font-face {
+  /* Measured against Yekan Bakh: Segoe UI is within ~2% in width */
+  font-family: 'Yekan Bakh Fallback';
+  src: local('Segoe UI'), local('SegoeUI');
+  size-adjust: 101.5%;
+  ascent-override: 95%;
+  descent-override: 45%;
+}
+@font-face {
+  font-family: 'Yekan Bakh Fallback Alt';
+  src: local('Tahoma'), local('Geeza Pro'), local('Noto Naskh Arabic');
+  size-adjust: 95%;
+  ascent-override: 95%;
+  descent-override: 45%;
+}
